@@ -9,24 +9,19 @@ import UIKit
 
 final class MainViewController: UIViewController {
 
-    private lazy var button = UIButton()
+    private lazy var mainView = MainView()
     
     //MARK: - Life
     
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
-        layout()
+        
     }
 
-    private func layout() {
-        view.addSubview(button)
-        button.translatesAutoresizingMaskIntoConstraints = false
-        NSLayoutConstraint.activate([
-            button.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            button.centerYAnchor.constraint(equalTo: view.centerYAnchor)
-        ])
-        
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        view = mainView
     }
 
 }
